@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num1, num2, add, multiply, subtract, modulus = 0;
+	cout<<"type the first number: ";
+	cin>>num1;
+	cout<<"type the second number: ";
+	cin>>num2;
+	add = num1 + num2;
+	multiply = num1 * num2;
+	subtract = num1 - num2;
+	modulus = num1 % num2;
+	cout<<"\nAddition of the numbers gives: "<<add<<"\nMultiplication of the two number gives: "<<multiply<<"\nMubtraction of the first number by the second number gives: "<<subtract<<"\nModulus of the first number by the second number gives: "<<modulus;
+}

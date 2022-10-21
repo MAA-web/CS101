@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	float number, discount, sale_price= 0;
+	cout<<"Type the price of the product: ";
+	cin>>number;
+	discount = number * 20/100;
+	//cout<<discount;
+	sale_price = number - discount;
+	cout<<"The sale price of the product after 20% discount is: "<<sale_price;
+}

@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	long int number, last_digit = 0;
+	cout<<"Type the number: ";
+	cin>>number;
+	last_digit = number % 10;
+	cout<<"The right most digit is: "<<last_digit;
+}
