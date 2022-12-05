@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {
     cout<<"Type the number of Semesters you want to enter: ";
     cin>>a;
-    cout<<"Type the number of Courcess you want to enter: ";
+    cout<<"Type the number of Courses you want to enter: ";
     cin>>b;
     float marks_matrix[a][b];
     for (int i = 0; i < a; i++)

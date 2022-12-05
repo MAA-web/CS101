@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/blissedswan/Documents/university-work/CS101/build",
+  "command": "/usr/bin/clang++ -I/home/blissedswan/Documents/university-work/CS101/. -I/home/blissedswan/Documents/university-work/CS101/practice -g -o CMakeFiles/CS101.dir/lab8_function_overloading_I.cpp.o -c /home/blissedswan/Documents/university-work/CS101/lab8_function_overloading_I.cpp",
+  "file": "/home/blissedswan/Documents/university-work/CS101/lab8_function_overloading_I.cpp"
+}
+]

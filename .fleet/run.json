@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "c++",
+            "type": "command",
+            "program": "clang++",
+            "args":"-o $FILE$",
+        }
+    ]
+}
