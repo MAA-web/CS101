@@ -49,8 +49,8 @@ cmake_ninja_workdir = /home/blissedswan/Documents/university-work/CS101/cmake-bu
 
 build cmake_object_order_depends_target_CS101: phony || CMakeFiles/CS101.dir
 
-build CMakeFiles/CS101.dir/lab8_function_overloading_I.cpp.o: CXX_COMPILER__CS101_Debug /home/blissedswan/Documents/university-work/CS101/lab8_function_overloading_I.cpp || cmake_object_order_depends_target_CS101
-  DEP_FILE = CMakeFiles/CS101.dir/lab8_function_overloading_I.cpp.o.d
+build CMakeFiles/CS101.dir/lab8_functions_I.cpp.o: CXX_COMPILER__CS101_Debug /home/blissedswan/Documents/university-work/CS101/lab8_functions_I.cpp || cmake_object_order_depends_target_CS101
+  DEP_FILE = CMakeFiles/CS101.dir/lab8_functions_I.cpp.o.d
   FLAGS = -g -std=gnu++14
   INCLUDES = -I/home/blissedswan/Documents/university-work/CS101/. -I/home/blissedswan/Documents/university-work/CS101/practice
   OBJECT_DIR = CMakeFiles/CS101.dir
@@ -64,7 +64,7 @@ build CMakeFiles/CS101.dir/lab8_function_overloading_I.cpp.o: CXX_COMPILER__CS10
 #############################################
 # Link the executable CS101
 
-build CS101: CXX_EXECUTABLE_LINKER__CS101_Debug CMakeFiles/CS101.dir/lab8_function_overloading_I.cpp.o
+build CS101: CXX_EXECUTABLE_LINKER__CS101_Debug CMakeFiles/CS101.dir/lab8_functions_I.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/CS101.dir
   POST_BUILD = :

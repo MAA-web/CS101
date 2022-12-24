@@ -7,5 +7,5 @@ include_directories(.)
 include_directories(practice)
 
 add_executable(CS101
-        lab8_function_overloading_I.cpp
+        lab8_functions_I.cpp
         )

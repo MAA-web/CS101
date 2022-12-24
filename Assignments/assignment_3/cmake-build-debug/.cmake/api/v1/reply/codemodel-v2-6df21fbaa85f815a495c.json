@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "CS101",
+					"name" : "assignment_3",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "CS101::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CS101-Debug-ece028cf2a55546cf585.json",
-					"name" : "CS101",
+					"id" : "assignment_3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-assignment_3-Debug-99b3b9f908b31ed71dde.json",
+					"name" : "assignment_3",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/blissedswan/Documents/university-work/CS101/cmake-build-debug",
-		"source" : "/home/blissedswan/Documents/university-work/CS101"
+		"build" : "/home/blissedswan/projects/university-work/CS101/Assignments/assignment_3/cmake-build-debug",
+		"source" : "/home/blissedswan/projects/university-work/CS101/Assignments/assignment_3"
 	},
 	"version" : 
 	{
