@@ -1,6 +1,26 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
+
+#if defined(__linux__) // Or #if __linux__
+    int OS = 1;
+#elif _WIN32
+  #if defined(_WIN64)
+    int OS = 2
+  #else
+    int OS = 2
+  #endif
+#elif __APPLE__
+  int OS = 1
+#elif __FreeBSD__
+  int OS = 1
+#else
+#endif
+
+
+
+
 namespace salted_potato  {
     int length(char * a) {
         int len = 0;
@@ -8,6 +28,30 @@ namespace salted_potato  {
             len++;
         }
         return len;
+    }
+
+    int length(string l) {
+        int j = 0;
+        for (int i = 0; l[i] != '\0'; i++) {
+            //cout<<l[i];
+            j = i;
+        }        
+        return j + 1;
+    }
+
+    char * convert_to_charStar_for_spaces_and_uppercase(string l){
+        int len = length(l);
+        char * c = static_cast<char *>(malloc(sizeof(char) * len));
+        for (int i = 0; i < len; i++) {
+            if(l[i] == ' ')c[i] = ' ';
+            else c[i] = l[i];
+            if((int) l[i] >= 65 && (int) l[i] <= 90) {
+                int upper_ascii = (int) l[i] + 32;
+                c[i] = (char) upper_ascii;
+            }
+
+        }
+        return c;
     }
 }
 
@@ -23,12 +67,16 @@ char * shiftLeft(char * & ,int);
 char * shiftRight(char * &, int );
 
 int main() {
+    char h[4] = "abc";
 
     char *a = "ABCDEFG";
     char *b = "1234567";
-    /*
-    cout<<"add: "<<add(a, b)<<endl;
+    cout<<"|--------------------------------------------------------------------------Task one--------------------------------------------------------------------------|"<<endl;
 
+    cout<<"add: "<<add(a, b)<<endl;
+    cout<<a<<endl;
+    addEql(a,b);
+    cout<<a<<endl;
     cout<<"getChar: "<<getChar(a, 1)<<endl;
     char ch = '1';
     setChar(b,4,ch);
@@ -44,34 +92,73 @@ int main() {
     cout<<"shiftRight: "<<shiftRight(a, 3)<<endl;
     cout<<shiftLeft(a, 3)<<endl;
     cout<<a<<endl;
-    */
 
 
 
 
     cout<<"|--------------------------------------------------------------------------Task two--------------------------------------------------------------------------|"<<endl;
-    char * c = "china";
+    /*File inclusion*/
+    fstream file;
+    file.open("cities.txt", ios::in);
+    string random_string;
+    srand(time(0));
+    int random_integer = 0;
+
+    while(true) {
+        int temp_random_integer = (rand() % 22632);
+        //cout<<g;
+        if(temp_random_integer <= 42906) {
+            random_integer = temp_random_integer;
+            break;
+        }
+    }
+
+    int indexer = 0;
+    string to_be_converted_to_charStar;
+    while(getline(file, random_string))
+    {
+        indexer++;
+        if( indexer == random_integer) {
+            to_be_converted_to_charStar = random_string;
+            break;
+        }
+    }
+
+    char * c = salted_potato::convert_to_charStar_for_spaces_and_uppercase(to_be_converted_to_charStar);
     int length = salted_potato::length(c);
+
+    int number_of_spaces = 0;
     char * check = static_cast<char * >(malloc(sizeof(char) * length));
-    check = "_____";
+    for (int i = 0; i < length; i++) {
+        if(c[i] == ' '){
+            check[i] = ' ';
+            number_of_spaces++;
+        }
+        else check[i]='_';
+    }
+
     char * check1 = static_cast<char * >(malloc(sizeof(char) * 11));
-    check1 = "___________";
+    for (int i = 0; i < 11; i++) {
+        check1[i] = '_';
+    }
+
     int mistakes = 0;
     int right = 0;
     char w = ' ';
+    cout<<c;
     while(mistakes <= 11) {
 
         while(true){
             cout<<"Type a word (tries left "<<11-mistakes<<" ): ";
             cin>>w;
 
-            int h = 0;
+            bool is_already_present = false;
             for (int i = 0; i < 11; i++) {
                 if (check1[i] == w){
-                    h++;
+                    is_already_present = true;
                     continue;
                 }
-                else if (check1[i] == '_' && h == 0) {
+                else if (check1[i] == '_' && !is_already_present) {
                     setChar(check1,i,w);
                     break;
                 }
@@ -79,11 +166,11 @@ int main() {
 
             for (int i = 0; i < length; i++) {
                 if(check[i] == w) {
-                    h++;
-                    continue;
+                    is_already_present = true;
+                    //continue;
                 }
             }
-            if (h == 0){
+            if (!is_already_present){
                 break;
             }
             else {
@@ -102,7 +189,14 @@ int main() {
         }
         if(g == 0){mistakes++;}
 
-        if(system("cls"))system("clear");
+        if(OS == 1){
+            system("clear");
+        }
+        else if (OS == 2)
+        {
+            system("CLS");
+        }
+        
 
         if(mistakes == 11) {
             cout << " (¨!¨)\n"
@@ -117,7 +211,7 @@ int main() {
             cout << " (¨!¨)\n"
                     "  /|\\\n"
                     "   |\n"
-                    "   \\\n ";
+                    "    \\\n ";
         }
         if(mistakes == 9){
             cout << " (¨!¨)\n"
@@ -181,7 +275,7 @@ int main() {
         }
         cout<<endl;
         cout<<check<<endl;
-        if (right == length){
+        if (right == (length - number_of_spaces)){
             cout<<"YOU WIN"<<endl;
             cout<<"The word was "<<c<<endl;
             break;
@@ -287,6 +381,4 @@ char * shiftRight(char * &a, int i) {
     return c;
 }
 /*addEql  get/setChar  isEqual  isGreater   isSmaller  getSubstring  shiftLeft shiftRight*/
-
-//TODO put in file reading and rand funcion
 //TODO clean up code

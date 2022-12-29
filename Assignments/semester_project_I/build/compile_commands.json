@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/blissedswan/projects/university-work/CS101/Assignments/semester_project_I/build",
+  "command": "/usr/bin/c++ -g -std=gnu++23 -o CMakeFiles/semester_project_I.dir/main.cpp.o -c /home/blissedswan/projects/university-work/CS101/Assignments/semester_project_I/main.cpp",
+  "file": "/home/blissedswan/projects/university-work/CS101/Assignments/semester_project_I/main.cpp"
+}
+]
