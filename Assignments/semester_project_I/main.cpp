@@ -67,218 +67,267 @@ char * shiftLeft(char * & ,int);
 char * shiftRight(char * &, int );
 
 int main() {
-    char h[4] = "abc";
+    char task;
+    cout<<"select a task: ";
+    cin>>task;
+    if (task == '1') {
+        cout << "|--------------------------------------------------------------------------Task one--------------------------------------------------------------------------|" << endl;
 
-    char *a = "ABCDEFG";
-    char *b = "1234567";
-    cout<<"|--------------------------------------------------------------------------Task one--------------------------------------------------------------------------|"<<endl;
-
-    cout<<"add: "<<add(a, b)<<endl;
-    cout<<a<<endl;
-    addEql(a,b);
-    cout<<a<<endl;
-    cout<<"getChar: "<<getChar(a, 1)<<endl;
-    char ch = '1';
-    setChar(b,4,ch);
-    cout<<"setChar: "<<b<<endl;
-    cout<<"isEqual: "<<isEqual(a,b)<<endl;
-    cout<<"isGreater: "<<isGreater(a,b)<<endl;
-    cout<<"isSmaller: "<<isSmaller(a,b)<<endl;
-    cout<<"getSubstring: "<<getSubstring(a, 0, 3)<<endl;
-
-    cout<<"shiftLeft: "<<shiftLeft(a,1)<<endl;
-    cout<<"shiftRight: "<<shiftRight(a, 1)<<endl;
-    cout<<a<<endl;
-    cout<<"shiftRight: "<<shiftRight(a, 3)<<endl;
-    cout<<shiftLeft(a, 3)<<endl;
-    cout<<a<<endl;
+        char *a = "ABCDEFG";
+        char *b = "1234567";
 
 
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "add: " << add(a, b) << endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        addEql(a, b);
+        cout<<"addEql: " << a << endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "getChar: " << getChar(a, 1) << endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        char ch = '1';
+        setChar(b, 4, ch);
+        cout<<"setchar: "<<a<<endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "isEqual: " << isEqual(a, b) << endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "isGreater: " << isGreater(a, b) << endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "isSmaller: " << isSmaller(a, b) << endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "getSubstring: " << getSubstring(a, 3, 7) << endl;
 
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "shiftLeft: " << shiftLeft(a, 1) << endl;
+        cout<<"a: "<<a<<endl;
+        
+        cout<<endl;
+        cout <<"a: " << a << endl;
+        cout<< "b: "<< b <<endl;
+        cout << "shiftRight: " << shiftRight(a, 1) << endl;
+        cout << "a: " << a << endl;
+        cout << "b: " << b <<endl;
+       
+       }
 
-    cout<<"|--------------------------------------------------------------------------Task two--------------------------------------------------------------------------|"<<endl;
-    /*File inclusion*/
-    fstream file;
-    file.open("cities.txt", ios::in);
-    string random_string;
-    srand(time(0));
-    int random_integer = 0;
+    else {
+        cout << "|--------------------------------------------------------------------------Task two--------------------------------------------------------------------------|" << endl;
+        /*File inclusion*/
+        fstream file;
+        file.open("cities_and_countries.txt", ios::in);
+        string random_string;
+        srand(time(0));
+        int random_integer = 0;
 
-    while(true) {
-        int temp_random_integer = (rand() % 22632);
-        //cout<<g;
-        if(temp_random_integer <= 42906) {
-            random_integer = temp_random_integer;
-            break;
-        }
-    }
-
-    int indexer = 0;
-    string to_be_converted_to_charStar;
-    while(getline(file, random_string))
-    {
-        indexer++;
-        if( indexer == random_integer) {
-            to_be_converted_to_charStar = random_string;
-            break;
-        }
-    }
-
-    char * c = salted_potato::convert_to_charStar_for_spaces_and_uppercase(to_be_converted_to_charStar);
-    int length = salted_potato::length(c);
-
-    int number_of_spaces = 0;
-    char * check = static_cast<char * >(malloc(sizeof(char) * length));
-    for (int i = 0; i < length; i++) {
-        if(c[i] == ' '){
-            check[i] = ' ';
-            number_of_spaces++;
-        }
-        else check[i]='_';
-    }
-
-    char * check1 = static_cast<char * >(malloc(sizeof(char) * 11));
-    for (int i = 0; i < 11; i++) {
-        check1[i] = '_';
-    }
-
-    int mistakes = 0;
-    int right = 0;
-    char w = ' ';
-    cout<<c;
-    while(mistakes <= 11) {
-
-        while(true){
-            cout<<"Type a word (tries left "<<11-mistakes<<" ): ";
-            cin>>w;
-
-            bool is_already_present = false;
-            for (int i = 0; i < 11; i++) {
-                if (check1[i] == w){
-                    is_already_present = true;
-                    continue;
-                }
-                else if (check1[i] == '_' && !is_already_present) {
-                    setChar(check1,i,w);
-                    break;
-                }
-            }
-
-            for (int i = 0; i < length; i++) {
-                if(check[i] == w) {
-                    is_already_present = true;
-                    //continue;
-                }
-            }
-            if (!is_already_present){
+        while (true) {
+            int temp_random_integer = (rand() % 22632);
+            //cout<<g;
+            if (temp_random_integer <= 43098) {
+                random_integer = temp_random_integer;
                 break;
             }
-            else {
-                cout<<"Word already used! choose another one"<<endl;
+        }
+
+        int indexer = 0;
+        string to_be_converted_to_charStar;
+        while (getline(file, random_string)) {
+            indexer++;
+            if (indexer == random_integer) {
+                to_be_converted_to_charStar = random_string;
+                break;
             }
         }
 
-        /*printing*/
-        int g = 0;
+        char *c = salted_potato::convert_to_charStar_for_spaces_and_uppercase(to_be_converted_to_charStar);
+        int length = salted_potato::length(c);
+
+        int number_of_spaces = 0;
+        char *check = static_cast<char * >(malloc(sizeof(char) * length));
         for (int i = 0; i < length; i++) {
-            if(c[i] == w) {
-                setChar(check,i,w);
-                g++;
-                right++;
+            if (c[i] == ' ') {
+                check[i] = ' ';
+                number_of_spaces++;
+            } else check[i] = '_';
+        }
+
+        char *check1 = static_cast<char * >(malloc(sizeof(char) * 11));
+        for (int i = 0; i < 11; i++) {
+            check1[i] = '_';
+        }
+
+        int mistakes = 0;
+        int right = 0;
+        char w = ' ';
+        cout << c;
+        while (mistakes <= 11) {
+
+            while (true) {
+                cout << "Type a word (tries left " << 11 - mistakes << " ): ";
+                cin >> w;
+
+                bool is_already_present = false;
+                for (int i = 0; i < 11; i++) {
+                    if (check1[i] == w) {
+                        is_already_present = true;
+                        continue;
+                    } else if (check1[i] == '_' && !is_already_present) {
+                        setChar(check1, i, w);
+                        break;
+                    }
+                }
+
+                for (int i = 0; i < length; i++) {
+                    if (check[i] == w) {
+                        is_already_present = true;
+                        //continue;
+                    }
+                }
+                if (!is_already_present) {
+                    break;
+                } else {
+                    cout << "Word already used! choose another one" << endl;
+                }
             }
-        }
-        if(g == 0){mistakes++;}
 
-        if(OS == 1){
-            system("clear");
-        }
-        else if (OS == 2)
-        {
-            system("CLS");
-        }
-        
+            /*printing*/
+            int g = 0;
+            for (int i = 0; i < length; i++) {
+                if (c[i] == w) {
+                    setChar(check, i, w);
+                    g++;
+                    right++;
+                }
+            }
+            if (g == 0) { mistakes++; }
 
-        if(mistakes == 11) {
-            cout << " (¨!¨)\n"
-                    "  /|\\\n"
-                    "   |\n"
-                    "  / \\\n ";
-            cout<<"YOU LOSE!"<<endl;
-            cout<<"The word was "<<c<<endl;
-            break;
-        }
-        if(mistakes == 10){
-            cout << " (¨!¨)\n"
-                    "  /|\\\n"
-                    "   |\n"
-                    "    \\\n ";
-        }
-        if(mistakes == 9){
-            cout << " (¨!¨)\n"
-                    "  /|\\\n"
-                    "   |\n"
-                    "  ";
-        }
-        if(mistakes == 8){
-            cout << " (¨!¨)\n"
-                    "  /|\\\n"
-                    "   "
-                    " ";
-        }
-        if(mistakes == 7){
-            cout << " (¨!¨)\n"
-                    "  /|\n"
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 6){
-            cout << " (¨!¨)\n"
-                    "  /\n"
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 5){
-            cout << " (¨!¨)\n"
-                    "  "
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 4){
-            cout << " (¨!)\n"
-                    "  "
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 3){
-            cout << " (¨)\n"
-                    "  "
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 2){
-            cout << " ()\n"
-                    "  "
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 1){
-            cout << " (\n"
-                    "  "
-                    "  "
-                    "  ";
-        }
-        if(mistakes == 0){
-            cout << "  "
-                    "  "
-                    "  "
-                    "  ";
-        }
-        cout<<endl;
-        cout<<check<<endl;
-        if (right == (length - number_of_spaces)){
-            cout<<"YOU WIN"<<endl;
-            cout<<"The word was "<<c<<endl;
-            break;
+            if (OS == 1) {
+                system("clear");
+            } else if (OS == 2) {
+                system("CLS");
+            }
+
+
+            if (mistakes == 11) {
+                cout << "      |\n"
+                        "      |\n"
+                        "      |\n"
+                        " (¨!¨)|\n"
+                        "  |||\n"
+                        "   |\n"
+                        "  | |\n";
+                cout<<endl;
+                //cout << " (¨!¨)\n"
+                //        "  /|\\\n"
+                //        "   |\n"
+                //        "  / \\\n ";
+                cout << "YOU LOSE!" << endl;
+                cout << "The word was " << c << endl;
+                break;
+            }
+            if (mistakes == 10) {
+                cout << " (¨!¨)\n"
+                        "  /|\\\n"
+                        "   |\n"
+                        "    \\\n ";
+            }
+            if (mistakes == 9) {
+                cout << " (¨!¨)\n"
+                        "  /|\\\n"
+                        "   |\n"
+                        "  ";
+            }
+            if (mistakes == 8) {
+                cout << " (¨!¨)\n"
+                        "  /|\\\n"
+                        "   "
+                        " ";
+            }
+            if (mistakes == 7) {
+                cout << " (¨!¨)\n"
+                        "  /|\n"
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 6) {
+                cout << " (¨!¨)\n"
+                        "  /\n"
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 5) {
+                cout << " (¨!¨)\n"
+                        "  "
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 4) {
+                cout << " (¨!)\n"
+                        "  "
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 3) {
+                cout << " (¨)\n"
+                        "  "
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 2) {
+                cout << " ()\n"
+                        "  "
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 1) {
+                cout << " (\n"
+                        "  "
+                        "  "
+                        "  ";
+            }
+            if (mistakes == 0) {
+                cout << "  "
+                        "  "
+                        "  "
+                        "  ";
+            }
+            cout<<endl;
+            //cout<<"Used words: ";
+            //cout<<check1<<endl;
+            cout << endl;
+            cout << check << endl;
+            cout<<endl;
+            
+            cout<<endl;
+            if (right == (length - number_of_spaces)) {
+                cout << "YOU WIN" << endl;
+                cout << "The word was " << c << endl;
+                break;
+            }
         }
     }
 
