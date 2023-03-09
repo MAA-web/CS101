@@ -1,3 +1,0 @@
-/home/blissedswan/Documents/university-work/CS101/cmake-build-debug/CMakeFiles/CS101.dir
-/home/blissedswan/Documents/university-work/CS101/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/blissedswan/Documents/university-work/CS101/cmake-build-debug/CMakeFiles/rebuild_cache.dir

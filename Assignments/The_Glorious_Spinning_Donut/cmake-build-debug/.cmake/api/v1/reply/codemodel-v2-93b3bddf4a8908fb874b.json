@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "The_Glorious_Spinning_Donut",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "The_Glorious_Spinning_Donut::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-The_Glorious_Spinning_Donut-Debug-d52872a3de5a596e5fff.json",
+					"name" : "The_Glorious_Spinning_Donut",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/blissedswan/projects/university-work/CS101/Assignments/The_Glorious_Spinning_Donut/cmake-build-debug",
+		"source" : "/home/blissedswan/projects/university-work/CS101/Assignments/The_Glorious_Spinning_Donut"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
