@@ -261,6 +261,18 @@ int main() {
                         "   |\n"
                         "  ";
             }
+            if(mistakes == 23) {
+                cout<< " (¨!¨)\n"
+                        "  /|\\\n"
+                        "   |\n"
+                        "  ";
+            }
+            if(mistakes == 24) {
+                cout<< " (¨!¨)\n"
+                        "  /|\\\n"
+                        "   |\n"
+                        "  ";
+            }
             if (mistakes == 8) {
                 cout << " (¨!¨)\n"
                         "  /|\\\n"

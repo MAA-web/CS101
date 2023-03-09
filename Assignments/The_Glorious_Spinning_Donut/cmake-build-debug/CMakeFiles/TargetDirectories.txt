@@ -1,0 +1,3 @@
+/home/blissedswan/projects/university-work/CS101/Assignments/The_Glorious_Spinning_Donut/cmake-build-debug/CMakeFiles/The_Glorious_Spinning_Donut.dir
+/home/blissedswan/projects/university-work/CS101/Assignments/The_Glorious_Spinning_Donut/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/blissedswan/projects/university-work/CS101/Assignments/The_Glorious_Spinning_Donut/cmake-build-debug/CMakeFiles/rebuild_cache.dir
